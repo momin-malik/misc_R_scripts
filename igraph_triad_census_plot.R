@@ -1,11 +1,13 @@
 # This produces a dot plot (a horizontal histogram made with dots instead of bars)
 # for counts of triads in a graph. Helpfully, I generate pictures of the triads. 
+# This uses the igraph library, rather than the network/sna libraries. 
 # V1.0, by Momin M. Malik, August 11, 2016.
+
+library(igraph)
 
 # Replace sample_gnm with your graph. 
 triad.census <- triad.census(sample_gnm(15, 45, directed = TRUE))
 
-library(igraph)
 census.triads <- rep(list(NA),16)
 names(census.triads) <- c("003","012","102","021D","021U","021C","111D","111U","030T","030C","201","120D","120U","120C","210","300")
 names(triad.census) <- names(census.triads)
