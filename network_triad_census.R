@@ -1,6 +1,6 @@
 # This produces a dot plot (a horizontal histogram made with dots instead of bars)
 # for counts of triads in a graph. Helpfully, I generate pictures of the triads. 
-# This uses the network package, rather than the igraph package. 
+# This uses the network/sna libraries, rather than the igraph library. 
 # V1.0, by Momin M. Malik, August 11, 2016.
 
 library(network)
