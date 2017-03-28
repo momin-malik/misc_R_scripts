@@ -1,4 +1,9 @@
-# In line 41, replace "sample_gnm" with your graph. Uncomment lines 44 and 75 to produce a pdf plot. 
+# This produces a dot plot (a horizontal histogram made with dots instead of bars)
+# for counts of triads in a graph. Helpfully, I generate pictures of the triads. 
+# V1.0, by Momin M. Malik, August 11, 2016.
+
+# In line 46, replace "sample_gnm" with your graph.
+# Uncomment lines 56 and 80 to output a pdf plot in your working directory. 
 
 library(igraph)
 census.triads <- rep(list(NA),16)
