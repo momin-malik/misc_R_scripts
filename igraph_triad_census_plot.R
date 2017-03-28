@@ -1,3 +1,5 @@
+# In line 41, replace "sample_gnm" with your graph. Uncomment lines 44 and 75 to produce a pdf plot. 
+
 library(igraph)
 census.triads <- rep(list(NA),16)
 names(census.triads) <- c("003","012","102","021D","021U","021C","111D","111U","030T","030C","201","120D","120U","120C","210","300")
@@ -35,6 +37,7 @@ for (i in 1:length(census.triads)) {
 par(mfrow=c(1,1))
 par(mar=c(5.1,4.1,4.1,2.1))
 
+# REPLACE sample_gnm WITH YOUR GRAPH
 triad.census <- triad.census(sample_gnm(15, 45, directed = TRUE))
 names(triad.census) <- names(census.triads)
 
