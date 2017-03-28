@@ -2,12 +2,13 @@
 # for counts of triads in a graph. Helpfully, I generate pictures of the triads. 
 # V1.0, by Momin M. Malik, August 11, 2016.
 
-# In line 46, replace "sample_gnm" with your graph.
-# Uncomment lines 56 and 80 to output a pdf plot in your working directory. 
+# Replace sample_gnm with your graph. 
+triad.census <- triad.census(sample_gnm(15, 45, directed = TRUE))
 
 library(igraph)
 census.triads <- rep(list(NA),16)
 names(census.triads) <- c("003","012","102","021D","021U","021C","111D","111U","030T","030C","201","120D","120U","120C","210","300")
+names(triad.census) <- names(census.triads)
 census.triads[["003"]]  <- graph.formula(1, 2, 3) # 1, 2, 3
 census.triads[["012"]]  <- graph.formula(1-+2, 2--3, 1--3) # 1-+2, 3
 census.triads[["102"]]  <- graph.formula(1++2, 2--3, 1--3) # 1++2, 3
@@ -42,11 +43,7 @@ for (i in 1:length(census.triads)) {
 par(mfrow=c(1,1))
 par(mar=c(5.1,4.1,4.1,2.1))
 
-# REPLACE sample_gnm WITH YOUR GRAPH
-triad.census <- triad.census(sample_gnm(15, 45, directed = TRUE))
-names(triad.census) <- names(census.triads)
-
-# pdf("triad.census.pdf",width=10,height=7.5)
+pdf("triad.census.pdf",width=10,height=7.5)
 w <- 15 # Additional width past the first column
 h <- 19
 rpad <- 1 # Subtracts from width on right side
@@ -77,6 +74,6 @@ orders <- 9
 seq <- rep(c(1,2,5),orders)*rep(10^(0:(orders-1)),each=3)
 abline(v=log10(seq[-1]),col="lightgray",lty=2)
 plot.new()
-# dev.off()
+dev.off()
 par(mar=c(5.1,4.1,4.1,2.1))
 par(mfrow=c(1,1))
